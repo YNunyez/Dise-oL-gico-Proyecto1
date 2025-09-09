@@ -6,7 +6,7 @@ FAMILY = GW1N-9C
 DEVICE = GW1NR-LV9QN88PC6/I5
 
 #Nombre del proyecto... Acá ponen el nombre que deseen.
-PROYECT = hamming
+PROYECT = proyecto
 
 #Fuentes de diseno
 SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv que estan en design
@@ -22,7 +22,7 @@ TESTBENCH = ../sim/hamming_tb.sv
 CONSTRAINTS = ../constr/blinky.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
-TOP_DESIGN = Codificador   
+TOP_DESIGN = hamming_encoder   
 TOP_TB = hamming_tb
 
 #nombre del vcd que va a generar el tb
