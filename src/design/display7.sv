@@ -2,6 +2,7 @@ module display7 (
     input  logic [3:0] palabra,
     output logic [6:0] seg
 );
+    // Mapeo de los segmentos para cada dígito hexadecimal
     always_comb begin
         case (palabra)
             4'd0: seg = 7'b0111111;
@@ -22,5 +23,6 @@ module display7 (
             4'd15: seg = 7'b1110001;
             default: seg = 7'b0000000; // Off for invalid input
         endcase
+        seg=~seg; // Invertir para display de ánodo común
     end
 endmodule

@@ -30,10 +30,10 @@ IO_PORT "led[4]" DRIVE=8 IO_TYPE=LVCMOS18;
 IO_LOC  "led[5]" 16;
 IO_PORT "led[5]" DRIVE=8 IO_TYPE=LVCMOS18;
 
-IO_LOC  "entrada1" 25;
+IO_LOC  "ent[1]" 25;
 
-IO_LOC  "entrada2" 26;
+IO_LOC  "ent[2]" 26;
 
-IO_LOC  "entrada3" 27;
+IO_LOC  "ent[3]" 27;
 
-IO_LOC  "entrada4" 28;
+IO_LOC  "ent[4]" 28;
