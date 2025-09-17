@@ -67,25 +67,25 @@ module hamming_tb;
         dato_entrada = 4'b1010;
         dato_error   = 4'b1010; // sin error
         #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
+        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Sindrome=%b",
                  dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+                 simplerror_detectado, doblerror_detectado, led_doblerror,s3,s2,s1);
 
         // Caso 2: error simple
         dato_entrada = 4'b0010;
         dato_error   = 4'b0000; // error simple
         #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
+        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Sindrome=%b",
                  dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+                 simplerror_detectado, doblerror_detectado, led_doblerror,s3,s2,s1);
 
         // Caso 3: error doble
         dato_entrada = 4'b1101;
         dato_error   = 4'b1011; // errores doble
         #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
+        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Sindrome=%b",
                  dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+                 simplerror_detectado, doblerror_detectado, led_doblerror,s3,s2,s1);
 
         $display("=======================================");
         $display("  Fin de la simulacion ");
