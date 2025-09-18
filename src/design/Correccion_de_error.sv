@@ -39,10 +39,10 @@ module Correccion_de_error (
 
     // Extraer datos corregidos
     always_comb begin
-        corregido[0] = palabra_corregida[2];
-        corregido[1] = palabra_corregida[4];
-        corregido[2] = palabra_corregida[5];
-        corregido[3] = palabra_corregida[6];
+        corregido[0] = palabra_corregida[3];
+        corregido[1] = palabra_corregida[5];
+        corregido[2] = palabra_corregida[6];
+        corregido[3] = palabra_corregida[7];
     end
 
     // Avisar error
