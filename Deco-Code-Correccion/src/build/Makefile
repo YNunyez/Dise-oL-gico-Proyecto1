@@ -64,3 +64,16 @@ load: ${PROYECT}_${BOARD}.fs
 
 .PHONY: load  wv
 .INTERMEDIATE: ${PROYECT}_pnr.json ${PROYECT}.json
+
+# Testbenches individuales
+test_codificador: ${SOURCES} ../sim/codificador_tb.sv
+	@iverilog -o codificador_test.o -s codificador_tb -g2005-sv ../sim/codificador_tb.sv ${SOURCES}
+	@vvp codificador_test.o
+
+test_decodificador: ${SOURCES} ../sim/decodificador_tb.sv
+	@iverilog -o decodificador_test.o -s decodificador_tb -g2005-sv ../sim/decodificador_tb.sv ${SOURCES}
+	@vvp decodificador_test.o
+
+test_correccion: ${SOURCES} ../sim/correccion_tb.sv
+	@iverilog -o correccion_test.o -s correccion_tb -g2005-sv ../sim/correccion_tb.sv ${SOURCES}
+	@vvp correccion_test.o
