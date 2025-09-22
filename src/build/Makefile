@@ -77,3 +77,7 @@ test_decodificador: ${SOURCES} ../sim/decodificador_tb.sv
 test_correccion: ${SOURCES} ../sim/correccion_tb.sv
 	@iverilog -o correccion_test.o -s correccion_tb -g2005-sv ../sim/correccion_tb.sv ${SOURCES}
 	@vvp correccion_test.o
+
+test_display: ${SOURCES} ../sim/display7_tb.sv
+	@iverilog -o display7_test.o -s display7_tb -g2005-sv ../sim/display7_tb.sv ${SOURCES}
+	@vvp display7_test.o
