@@ -1,7 +1,7 @@
 module mux (
     input  logic [1:0] e_mux,
     input  logic [3:0] corregido,
-    input  logic [3:0] corregido,
+    input  logic s1,
     output logic [3:0] s_mux
 );
     // Mapeo de los segmentos para cada dígito hexadecimal

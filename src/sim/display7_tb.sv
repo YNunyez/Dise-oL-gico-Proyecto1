@@ -6,18 +6,13 @@ module display7_tb;
     wire [6:0] seg;
 
     display7 dut (
-        .corregido(p),
+        .s_mux(p),
         .seg(seg)
     );
 
 // Generación de estímulos
     initial begin
-        $display("-------|---------|--------");
-        $display("Tiempo | Entrada | Salida ");
-        $display("-------|---------|--------");
-
-        $monitor("Tiempo = %t, Entrada = %b, Salida = %b", $time , p, seg);
-        
+        $monitor("Tiempo = %tns, Entrada = %b, Salida = %b", $time , p, seg);
         p = 4'b0000; #10; // Caso 0
         p = 4'b0001; #10; // Caso 1
         p = 4'b0010; #10; // Caso 2
