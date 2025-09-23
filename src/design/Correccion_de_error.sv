@@ -22,16 +22,16 @@ module Correccion_de_error (
             end
         else if (error_simple) begin
             if(s1==1 && s2==1 && s3==0)begin
-                palabra_corregida[2]=~recibido[2];       
+                palabra_corregida[3]=~recibido[3];       
             end
             else if(s1==1 && s2==0 && s3==1)begin
-                palabra_corregida[4]=~recibido[4];       
+                palabra_corregida[5]=~recibido[5];       
             end
             else if(s1==0 && s2==1 && s3==1)begin
-                palabra_corregida[5]=~recibido[5];        
+                palabra_corregida[6]=~recibido[6];        
             end
             else if(s1==1 && s2==1 && s3==1)begin
-                palabra_corregida[6]=~recibido[6];       
+                palabra_corregida[7]=~recibido[7];       
             end
         end
 

@@ -2,7 +2,9 @@
 
 module hamming_tb;
 
+    // =============================
     // Señales
+    // =============================
     logic reloj;
     logic [3:0] dato_entrada;
     logic [3:0] dato_error;
@@ -13,9 +15,13 @@ module hamming_tb;
     logic simplerror_detectado;
     logic doblerror_detectado;
     logic led_doblerror;
+
     // Síndromes
     logic s1, s2, s3, st;
     logic error_simple, error_doble;
+
+    // Señales display
+    logic [6:0] seg;
 
     // =============================
     // Instancias
@@ -53,45 +59,63 @@ module hamming_tb;
         .led_doblerror(led_doblerror)
     );
 
+    // Display conectado al dato corregido
+    display7 disp (
+        .corregido(corregido),
+        .seg(seg)
+    );
+
+    // =============================
     // Generador de reloj
+    // =============================
     initial reloj = 0;
     always #5 reloj = ~reloj;
 
+    // =============================
     // Estímulos
+    // =============================
     initial begin
         $display("=======================================");
-        $display("  Testbench Hamming SEC/DED (7,4) ");
+        $display("  Testbench Hamming SEC/DED (7,4) con display ");
         $display("=======================================");
 
         // Caso 1: sin error
-        dato_entrada = 4'b1010;
-        dato_error   = 4'b1010; // sin error
-        #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
-                 dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+            dato_entrada = 4'b1010;
+            dato_error   = 4'b1010; // sin error
+            #10;
+            $display("Caso 1: Entrada=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Display: %b",
+                dato_entrada, palabra, recibido, corregido,
+                simplerror_detectado, doblerror_detectado, led_doblerror, seg);
 
         // Caso 2: error simple
-        dato_entrada = 4'b0010;
-        dato_error   = 4'b0000; // error simple
-        #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
-                 dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+            dato_entrada = 4'b0010;
+            dato_error   = 4'b0000; // error simple
+            #10;
+            $display("Caso 2: Entrada=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Display: %b",
+                dato_entrada, palabra, recibido, corregido,
+                simplerror_detectado, doblerror_detectado, led_doblerror, seg);
 
         // Caso 3: error doble
-        dato_entrada = 4'b1101;
-        dato_error   = 4'b1011; // errores doble
-        #10;
-        $display("Dato=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b",
-                 dato_entrada, palabra, recibido, corregido,
-                 simplerror_detectado, doblerror_detectado, led_doblerror);
+            dato_entrada = 4'b1101;
+            dato_error   = 4'b1011; // error doble
+            #10;
+            $display("Caso 3: Entrada=%b | Codificado=%b | Recibido=%b | Corregido=%b | ErrS=%b | ErrD=%b | LED=%b | Display: %b",
+                dato_entrada, palabra, recibido, corregido,
+                simplerror_detectado, doblerror_detectado, led_doblerror, seg);
+
 
         $display("=======================================");
-        $display("  Fin de la simulacion ");
+        $display("  Fin de la simulación ");
         $display("=======================================");
-
         $finish;
+    end
+
+    // =============================
+    // VCD para GTKWave
+    // =============================
+    initial begin
+        $dumpfile("hamming_tb.vcd");
+        $dumpvars(0, hamming_tb);
     end
 
 endmodule

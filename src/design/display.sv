@@ -1,10 +1,10 @@
 module display7 (
-    input  logic [3:0] corregido,
+    input  logic [3:0] palabra,
     output logic [6:0] seg
 );
     // Mapeo de los segmentos para cada dígito hexadecimal
     always_comb begin
-        case (corregido)
+        case (palabra)
             4'd0: seg = 7'b0111111;
             4'd1: seg = 7'b0000110;
             4'd2: seg = 7'b1011011;
