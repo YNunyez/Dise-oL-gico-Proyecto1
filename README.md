@@ -47,10 +47,10 @@ module display7 (
 
 #### 4. Criterios de diseño
 El sistema recibe una palabra de cuatro bits que puede ser: la palabra resultante del módulo de corrección, la palabra con error o el síndrome, el código asigna cada palabra posible a un conjunto alfa de 7 bits, esos 7 bits encenderán un segmento del display cada uno y la palabra de 4 bits ingresada se verá representada con su equivalente en sistema hexadecimal en el display(ver imagen). Cabe decir que no hay una relación matemática entre la palabra de entrada y alfa, porque lo que alfa representa es el conjunto de leds a encender para formar un número hexadecimal en el display.
-![Conexiones del módulo](Imágenes/case_mux_7seg/.png)
+![Conexiones del módulo](/Imágenes/case_mux_7seg.png)
 
 #### 5. Testbench
-![Resultados del testbench](Imágenes/tb_terminal/.png)
+![Resultados del testbench](/Imágenes/tb_terminal/.png)
 
 
 ## 4. Consumo de recursos
