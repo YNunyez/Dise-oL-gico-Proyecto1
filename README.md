@@ -50,7 +50,7 @@ El sistema recibe una palabra de cuatro bits que puede ser: la palabra resultant
 ![Conexiones del módulo](/Imágenes/case_mux_7seg.png)
 
 #### 5. Testbench
-![Resultados del testbench](/Imágenes/tb_terminal/.png)
+![Resultados del testbench](/Imágenes/tb_terminal.png)
 
 
 ## 4. Consumo de recursos
