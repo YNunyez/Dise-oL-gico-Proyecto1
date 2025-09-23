@@ -1,5 +1,6 @@
 module top (
     input  logic        reloj,
+    input  logic [1:0]  e_mux,
     input  logic [3:0]  dato_entrada,   // Dato original (4 bits)
     input  logic [3:0]  dato_error,     // Bits forzados con error
     output logic [6:0]  seg,            // Display 7 segmentos

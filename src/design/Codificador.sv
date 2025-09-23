@@ -2,8 +2,9 @@ module Codificador (
     input logic reloj, // Señal de reloj 
     input logic [3:0] dato_entrada, // Dato original 
     output logic [7:0] palabra, // Palabra Hamming codificada 
-    output logic [5:0] led, //LEDS posiciones 1-6 
-    output logic [1:0] leds_6_7 //LEDS posiciones 7-8 
+    output logic [7:0] led, //LEDS
+    //output logic [5:0] led, //LEDS posiciones 1-6 
+    //output logic [1:0] leds_6_7 //LEDS posiciones 7-8 
     ); 
     // Codificación Hamming (7,4) con bit de paridad global 
     always_comb begin 
