@@ -1,5 +1,5 @@
 $date
-	Mon Sep 22 15:25:48 2025
+	Mon Sep 22 20:24:20 2025
 $end
 $version
 	Icarus Verilog
@@ -11,7 +11,7 @@ $scope module display7_tb $end
 $var wire 7 ! seg [6:0] $end
 $var reg 4 " p [3:0] $end
 $scope module dut $end
-$var wire 4 # palabra [3:0] $end
+$var wire 4 # s_mux [3:0] $end
 $var reg 7 $ seg [6:0] $end
 $upscope $end
 $upscope $end

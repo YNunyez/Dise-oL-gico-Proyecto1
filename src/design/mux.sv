@@ -1,10 +1,12 @@
-module display7 (
-    input  logic [3:0] s_mux,
-    output logic [6:0] seg
+module mux (
+    input  logic [1:0] e_mux,
+    input  logic [3:0] corregido,
+    input  logic s1,
+    output logic [3:0] s_mux
 );
     // Mapeo de los segmentos para cada dígito hexadecimal
     always_comb begin
-        case (s_mux)
+        case (palabra)
             4'd0: seg = 7'b0111111;
             4'd1: seg = 7'b0000110;
             4'd2: seg = 7'b1011011;
