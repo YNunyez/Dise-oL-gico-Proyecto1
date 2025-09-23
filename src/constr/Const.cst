@@ -2,13 +2,13 @@ IO_LOC  "mux[1]" 53;
 
 IO_LOC  "mux[0]" 51;
 
-IO_LOC  "entrada[3]" 25;
+IO_LOC  "dato_entrada[3]" 25;
 
-IO_LOC  "entrada[2]" 26;
+IO_LOC  "dato_entrada[2]" 26;
 
-IO_LOC  "entrada[1]" 27;
+IO_LOC  "dato_entrada[1]" 27;
 
-IO_LOC  "entrada[0]" 28;
+IO_LOC  "dato_entrada[0]" 28;
 
 IO_LOC  "p_error[7]" 29;
 
