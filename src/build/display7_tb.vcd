@@ -1,5 +1,9 @@
 $date
+<<<<<<< HEAD
 	Tue Sep 16 18:04:04 2025
+=======
+	Mon Sep 22 13:27:03 2025
+>>>>>>> 463a25f (Agrego todos los archivos nuevos)
 $end
 $version
 	Icarus Verilog
@@ -11,7 +15,11 @@ $scope module display7_tb $end
 $var wire 7 ! seg [6:0] $end
 $var reg 4 " p [3:0] $end
 $scope module dut $end
+<<<<<<< HEAD
 $var wire 4 # palabra [3:0] $end
+=======
+$var wire 4 # corregido [3:0] $end
+>>>>>>> 463a25f (Agrego todos los archivos nuevos)
 $var reg 7 $ seg [6:0] $end
 $upscope $end
 $upscope $end
