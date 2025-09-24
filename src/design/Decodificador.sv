@@ -1,6 +1,6 @@
 module Decodificador (
     input  logic        reloj,          // Señal de reloj
-    input  logic [3:0]  dato_error,     // Palabra forzada con error
+    input  logic [7:0]  dato_error,     // Palabra forzada con error
     input  logic [7:0]  palabra,        // Palabra Hamming codificada
     output logic [7:0]  recibido,       // Palabra con posible error
     output logic        error_simple,
@@ -13,11 +13,7 @@ module Decodificador (
 
     // Transmisión con posible error 
     always_comb begin 
-        recibido = palabra; 
-        recibido[3] = dato_error[0]; 
-        recibido[5] = dato_error[1]; 
-        recibido[6] = dato_error[2]; 
-        recibido[7] = dato_error[3]; 
+        recibido = dato_error; 
     end 
     // Decodificación 
     always_comb begin 

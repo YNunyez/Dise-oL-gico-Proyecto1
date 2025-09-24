@@ -12,7 +12,7 @@ module mux (
         case (e_mux)
             2'b01: s_mux = corregido; // Sa palabra corregida
             2'b10: s_mux = {p_error[3], p_error[5], p_error[6], p_error[7]}; // La palabra con error
-            2'b11: s_mux = {1'b0, s1, s2, s3}; // Síndromes
+            2'b11: s_mux = {1'b0, s3, s2, s1}; // Síndromes
             default: s_mux = 4'b0000; // Valor por defecto
         endcase
     end

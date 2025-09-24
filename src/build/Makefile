@@ -15,18 +15,18 @@ SOURCES := $(wildcard ../design/*.v ../design/*.sv) #Todas las fuentes .v o .sv 
 
 #Fuente de simulacion
 #aca va el testbench que quieran simular
-TESTBENCH = ../sim/hamming_tb.sv
+TESTBENCH = ../sim/top_tb.sv
 
 # Constraints para el proyecto
 #aca va el archivo de constraints del proyecto
 CONSTRAINTS = ../constr/Const.cst
 
 #el top se indica sin la extension .v, esto hace referencia al nombre que le pusieron al módulo y no al archivo en si.
-TOP_DESIGN = Codificador   
-TOP_TB = hamming_tb
+TOP_DESIGN = top   
+TOP_TB = top_tb
 
 #nombre del vcd que va a generar el tb
-VCD_FILE = hamming_tb.vcd
+VCD_FILE = top_tb.vcd
 
 
 all: synth pnr bitstream load
@@ -64,3 +64,23 @@ load: ${PROYECT}_${BOARD}.fs
 
 .PHONY: load  wv
 .INTERMEDIATE: ${PROYECT}_pnr.json ${PROYECT}.json
+
+test_codificador: ${SOURCES} ../sim/codificador_tb.sv
+	@iverilog -o codificador_test.o -s codificador_tb -g2005-sv ../sim/codificador_tb.sv ${SOURCES}
+	@vvp codificador_test.o
+
+test_decodificador: ${SOURCES} ../sim/decodificador_tb.sv
+	@iverilog -o decodificador_test.o -s decodificador_tb -g2005-sv ../sim/decodificador_tb.sv ${SOURCES}
+	@vvp decodificador_test.o
+
+test_correccion: ${SOURCES} ../sim/correccion_tb.sv
+	@iverilog -o correccion_test.o -s correccion_tb -g2005-sv ../sim/correccion_tb.sv ${SOURCES}
+	@vvp correccion_test.o
+
+test_display: ${SOURCES} ../sim/display7_tb.sv
+	@iverilog -o display7_test.o -s display7_tb -g2005-sv ../sim/display7_tb.sv ${SOURCES}
+	@vvp display7_test.o
+
+test_mux: ${SOURCES} ../sim/mux_tb.sv
+	@iverilog -o mux_test.o -s mux_tb -g2005-sv ../sim/mux_tb.sv ${SOURCES}
+	@vvp mux_test.o
