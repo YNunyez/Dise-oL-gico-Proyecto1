@@ -176,13 +176,13 @@ $$T=2Nt_PD$$
 Según la figura 8: 
 
 $$
-T=124,4ns
+T=124,4ns\\
 $$
+
+$$t_PLH=22,04ns$$
+
 $$
-t_PLH=22,04ns
-$$
-$$
-t_PHL=19,24ns$$
+t_PHL=19,24ns
 $$
 entonces:
 \\
