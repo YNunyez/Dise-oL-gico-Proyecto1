@@ -1,3 +1,159 @@
 Info: Series:GW1N-9C Device:GW1NR-9C Package:QFN88P Speed:C6/I5
-ERROR: Failed to open input CST file ../constr/blinky.cst.
-0 warnings, 1 error
+Info: Cell mux[1] not found
+Info: Cell mux[0] not found
+Info: Cell p_error[7] not found
+Info: Cell p_error[6] not found
+Info: Cell p_error[5] not found
+Info: Cell p_error[4] not found
+Info: Cell p_error[3] not found
+Info: Cell p_error[2] not found
+Info: Cell p_error[1] not found
+Info: Cell p_error[0] not found
+Info: Cell ded not found
+Info: Cell seg[6] not found
+Info: Cell seg[5] not found
+Info: Cell seg[4] not found
+Info: Cell seg[3] not found
+Info: Cell seg[2] not found
+Info: Cell seg[1] not found
+Info: Cell seg[0] not found
+
+Info: Packing constants..
+Info: Packing Shadow RAM..
+Info: Packing GSR..
+Info: Packing IOs..
+Info: Packing diff IOs..
+Info: Packing IO logic..
+Info: Packing wide LUTs..
+Info: Packing LUT5s..
+Info: Packing LUT6s..
+Info: Packing LUT7s..
+Info: Packing LUT8s..
+Info: Packing ALUs..
+Info: Packing LUT-FFs..
+Info: Packing non-LUT FFs..
+Info: Packing PLLs..
+Info: Checksum: 0x2d1e8e42
+
+Info: Annotating ports with timing budgets for target frequency 27.00 MHz
+Info: Checksum: 0x2d1e8e42
+
+Info: Device utilisation:
+Info: 	                 VCC:     1/    1   100%
+Info: 	               SLICE:     4/ 8640     0%
+Info: 	                 IOB:    21/  274     7%
+Info: 	                ODDR:     0/  274     0%
+Info: 	           MUX2_LUT5:     0/ 4320     0%
+Info: 	           MUX2_LUT6:     0/ 2160     0%
+Info: 	           MUX2_LUT7:     0/ 1080     0%
+Info: 	           MUX2_LUT8:     0/ 1056     0%
+Info: 	                 GND:     1/    1   100%
+Info: 	                RAMW:     0/  270     0%
+Info: 	                 GSR:     1/    1   100%
+Info: 	                 OSC:     0/    1     0%
+Info: 	                rPLL:     0/    2     0%
+
+Info: Placed 12 cells based on constraints.
+Info: Creating initial analytic placement for 7 cells, random placement wirelen = 442.
+Info:     at initial placer iter 0, wirelen = 340
+Info:     at initial placer iter 1, wirelen = 337
+Info:     at initial placer iter 2, wirelen = 337
+Info:     at initial placer iter 3, wirelen = 337
+Info: Running main analytical placer, max placement attempts per cell = 10000.
+Info:     at iteration #1, type SLICE: wirelen solved = 337, spread = 337, legal = 337; time = 0.00s
+Info:     at iteration #1, type VCC: wirelen solved = 337, spread = 337, legal = 337; time = 0.00s
+Info:     at iteration #1, type GND: wirelen solved = 337, spread = 337, legal = 337; time = 0.00s
+Info:     at iteration #1, type GSR: wirelen solved = 337, spread = 337, legal = 337; time = 0.00s
+Info:     at iteration #1, type ALL: wirelen solved = 337, spread = 337, legal = 337; time = 0.00s
+Info: HeAP Placer Time: 0.02s
+Info:   of which solving equations: 0.00s
+Info:   of which spreading cells: 0.00s
+Info:   of which strict legalisation: 0.00s
+
+Info: Running simulated annealing placer for refinement.
+Info:   at iteration #1: temp = 0.000000, timing cost = 0, wirelen = 337
+Info:   at iteration #5: temp = 0.000000, timing cost = 0, wirelen = 118
+Info:   at iteration #10: temp = 0.000000, timing cost = 0, wirelen = 78
+Info:   at iteration #15: temp = 0.000000, timing cost = 0, wirelen = 78
+Info:   at iteration #20: temp = 0.000000, timing cost = 0, wirelen = 78
+Info:   at iteration #21: temp = 0.000000, timing cost = 0, wirelen = 78 
+Info: SA placement time 0.02s
+
+Info: Max delay <async> -> <async>: 11.50 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 25539,  26034) |** 
+Info: [ 26034,  26529) | 
+Info: [ 26529,  27024) |* 
+Info: [ 27024,  27519) | 
+Info: [ 27519,  28014) |** 
+Info: [ 28014,  28509) | 
+Info: [ 28509,  29004) |* 
+Info: [ 29004,  29499) | 
+Info: [ 29499,  29994) |*** 
+Info: [ 29994,  30489) | 
+Info: [ 30489,  30984) |***** 
+Info: [ 30984,  31479) |** 
+Info: [ 31479,  31974) |**** 
+Info: [ 31974,  32469) | 
+Info: [ 32469,  32964) |** 
+Info: [ 32964,  33459) |* 
+Info: [ 33459,  33954) | 
+Info: [ 33954,  34449) |* 
+Info: [ 34449,  34944) |* 
+Info: [ 34944,  35439) |* 
+Info: Checksum: 0x3389fb66
+Info: Find global nets...
+Info: Routing globals...
+
+Info: Routing..
+Info: Setting up routing queue.
+Info: Routing 29 arcs.
+Info:            |   (re-)routed arcs  |   delta    | remaining|       time spent     |
+Info:    IterCnt |  w/ripup   wo/ripup |  w/r  wo/r |      arcs| batch(sec) total(sec)|
+Info:         29 |        0         29 |    0    29 |         0|       0.05       0.05|
+Info: Routing complete.
+Info: Router1 time 0.05s
+Info: Checksum: 0x0f317234
+
+Info: Critical path report for cross-domain path '<async>' -> '<async>':
+Info: curr total
+Info:  0.0  0.0  Source dato_entrada_IBUF_I_2$iob.O
+Info:  3.8  3.8    Net dato_entrada_IBUF_I_O[1] budget 37.037037 ns (10,28) -> (1,22)
+Info:                Sink led_OBUF_O_7_I_LUT3_F_LC.B
+Info:                Defined in:
+Info:                  d:\oss-cad-suite\bin\../share/yosys/gowin/cells_map.v:130.20-130.21
+Info:  1.1  4.9  Source led_OBUF_O_7_I_LUT3_F_LC.F
+Info:  2.7  7.7    Net led_OBUF_O_7_I budget 17.969519 ns (1,22) -> (0,14)
+Info:                Sink led_OBUF_O_7$iob.I
+Info: 1.1 ns logic, 6.6 ns routing
+
+Info: Max delay <async> -> <async>: 7.65 ns
+
+Info: Slack histogram:
+Info:  legend: * represents 1 endpoint(s)
+Info:          + represents [1,1) endpoint(s)
+Info: [ 29386,  29705) |* 
+Info: [ 29705,  30024) |** 
+Info: [ 30024,  30343) | 
+Info: [ 30343,  30662) | 
+Info: [ 30662,  30981) |** 
+Info: [ 30981,  31300) | 
+Info: [ 31300,  31619) |* 
+Info: [ 31619,  31938) |** 
+Info: [ 31938,  32257) | 
+Info: [ 32257,  32576) | 
+Info: [ 32576,  32895) |** 
+Info: [ 32895,  33214) |**** 
+Info: [ 33214,  33533) |** 
+Info: [ 33533,  33852) |*** 
+Info: [ 33852,  34171) |* 
+Info: [ 34171,  34490) |* 
+Info: [ 34490,  34809) |** 
+Info: [ 34809,  35128) |* 
+Info: [ 35128,  35447) |* 
+Info: [ 35447,  35766) |* 
+
+Info: Program finished normally.
