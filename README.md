@@ -8,6 +8,8 @@ Luego calcula los bits de paridad (palabra[1], palabra[2], palabra[4]) mediante 
 
 ![Conexiones del módulo](/Imágenes/bloques_code.png)
 
+![Conexiones del módulo](/Imágenes/test_code.png)
+
 
 •	Decodificador
 Este modulo recibe la palabra transmitida (dato_error), que puede estar alterada por fallos. Primero la copia en la señal recibido, y luego recalcula los bits de control (s1, s2, s3, st). s1, s2, s3 corresponden a los síndromes de paridad que indican la posible posición de error, st corresponde al bit de paridad global. Con esta información, estos clasifican el error en:
@@ -18,6 +20,9 @@ Error doble si hay inconsistencias en los síndromes pero la paridad global es 0
 
 ![Conexiones del módulo](/Imágenes/bloques_deco.png)
 
+![Conexiones del módulo](/Imágenes/test_deco.png)
+
+
 
 •	Corrector de errores
 En este módulo se utilizan los valores de los síndromes (s1, s2, s3) para localizar la posición del bit erróneo en caso de error simple. Dependiendo de la combinación, se invierte el bit correspondiente de palabra_corregida.
@@ -26,6 +31,8 @@ Si se detecta un error doble, no es posible corregirlo, pero se activa la señal
 Finalmente, se extraen los 4 bits originales o corregidos (corregido).
 
 ![Conexiones del módulo](/Imágenes/bloques_error.png)
+
+![Conexiones del módulo](/Imágenes/test_error.png)
 
 Para la simplificación de corrección de errores se debe de definir las entradas primero.
 
@@ -37,9 +44,9 @@ Las salidas corresponden a:
 
 A, B, C y D: Cada una de estas corresponden a un bit de información.
 
-$A=E*S1*S2*(S3)'$
+A=E*S1*S2*(S3)'
 
-$B=E*S1*(S2)'*S3$
+B=E*S1*(S2)'*S3
 
 C=E*(S1)'*S2*S3
 
