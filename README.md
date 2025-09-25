@@ -120,15 +120,24 @@ Variables:
 
 ## 4.  Ejemplo y análisis de una simulación funcional del sistema completo
 Para este caso se tiene:
+
 Dato entrada = 0010
+
 Para la cual genera la siguiente palabra con bits de paridad:
+
 Codificado= 00110011 
+
 Para el dato con error se ingresa el valor:
+
 Dato recibido=00010011
+
 Para lo cual se generarían las siguientes salidas:
+
 Sindrome=101| Corregido=0010 | ErrS=1 | ErrD=0
+
 De lo cual podemos extraer lo siguiente:
-	El error se dio en el bit 5, el cual efectivamente es el bit ingresado de forma errónea,
+	
+El error se dio en el bit 5, el cual efectivamente es el bit ingresado de forma errónea,
 	Tenemos un 1 en la salida de error simple (ErrS) y un 0 en la salida de error doble (ErrD), lo cual refleja lo visto en este caso.
 	Se pudo corregir el bit erróneo y llegar a la palabra original
 
