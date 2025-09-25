@@ -20,7 +20,7 @@ En este módulo se utilizan los valores de los síndromes (s1, s2, s3) para loca
 Si se detecta un error doble, no es posible corregirlo, pero se activa la señal led_doblerror para indicar la falla.
 Finalmente, se extraen los 4 bits originales o corregidos (corregido).
 
-
+•	Módulo
 ## 2. Referencias
 [0] David Harris y Sarah Harris. *Digital Design and Computer Architecture. RISC-V Edition.* Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
 
@@ -30,8 +30,8 @@ E (Error simple): Este se refiere a la salida generada en el subsistema de decod
 S1, S2, S3 y ST: Son bits generados también en el módulo de decodificador, tienen la función de ubicar el error.
 Las salidas corresponden a:
 A, B, C y D: Cada una de estas corresponden a un bit de información.
-A=E*S1*S2*(S3)'
-B=E*S1*(S2)'*S3
+$A=E*S1*S2*(S3)'$
+$B=E*S1*(S2)'*S3$
 C=E*(S1)'*S2*S3
 D=E*S1*S2*S3
 Note que para las ecuaciones el valor de E corresponde a:
