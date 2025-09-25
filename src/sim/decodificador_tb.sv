@@ -3,7 +3,7 @@
 module decodificador_tb;
 
     logic reloj;
-    logic [3:0] dato_error;
+    logic [7:0] dato_error;
     logic [7:0] palabra;
     logic [7:0] recibido;
     logic s1, s2, s3, st;
