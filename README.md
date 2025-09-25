@@ -82,13 +82,43 @@ C=ST*(S1)'*S2*S3
 
 D=ST*S1*S2*S3
 
+•	Módulo de interpretación para display
+El sistema recibe una palabra de cuatro bits que puede ser: la palabra resultante del módulo de corrección, la palabra con error o el síndrome, el código asigna cada palabra posible a un conjunto alfa de 7 bits, esos 7 bits encenderán un segmento del display cada uno y la palabra de 4 bits ingresada se verá representada con su equivalente en sistema hexadecimal en el display(ver imagen). Cabe decir que no hay una relación matemática entre la palabra de entrada y alfa, porque lo que alfa representa es el conjunto de leds a encender para formar un número hexadecimal en el display.
+Variables:
+- `s_mux`: es la palabra que sale del módulo selector, indica si lo que se representa es la palabra corregida(en caso de haber correción), la palabra que contiene uno o más errores ingresada a la fpga, o el síndrome calculado en el módulo de corrección. 
+- `seg`: es una palabra de 7 bits, cada uno conectado a las terminales del display de 7 segmentos.
+```SystemVerilog
+module display7 (
+    input  logic [3:0] s_mux,
+    output logic [6:0] seg
+);
+```
+![Conexiones del módulo](/Imágenes/case_mux_7seg.png)
+La funcion que implementa el mux para asociar cada palabra de 4 bits a una de 7, $$D_k$$ representa la palabra de 7 bits que hace que se genere al numero k en el display, k es el valor decimal de la palabra de entrada
+El testbench ingresa estímulos sobre el módulo e imprime en la terminal los datos de salida.
+![Conexiones del módulo](/Imágenes/7seg_funcion.png)
+
+![Resultados del testbench](/Imágenes/tb_terminal.png)
+
+•	Módulo mux
+El módulo consiste en un multiplexor 4x3:1 que recibe dos bits selectores y tres palabras de cuatro bits, la palabra corregida, la palabra con error y tres bits componentes del sindrome(se agrega un cero como bit más significativo), y saca una palabra de cuatro bits que será la selección entre las tres entradas. Para cada par de bits selectores: 
+00->{0,0,0,0} 
+01->palabra corregida
+10->palabra con error
+11->síndrome
+Variables:
+- `mux`:Es un par de bits que se encargan de seleccionar la palabra de salida
+![Conexiones del módulo](/Imágenes/mod_mux.png)
+
+![Conexiones del módulo](/Imágenes/mod_mux_funcion.png)
+
 •	Módulo
 ## 2. Referencias
 [0] David Harris y Sarah Harris. *Digital Design and Computer Architecture. RISC-V Edition.* Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
 
 ## 3. Simplificación de ecuaciones booleanas corrección de error
 
-## 5.  Ejemplo y análisis de una simulación funcional del sistema completo
+## 4.  Ejemplo y análisis de una simulación funcional del sistema completo
 Para este caso se tiene:
 Dato entrada = 0010
 Para la cual genera la siguiente palabra con bits de paridad:
@@ -103,66 +133,22 @@ De lo cual podemos extraer lo siguiente:
 	Se pudo corregir el bit erróneo y llegar a la palabra original
 
 
-### 3.0 Descripción general del sistema
-
-### 3.1 Módulo 1
-#### 1. Encabezado del módulo
-```SystemVerilog
-module mi_modulo(
-    input logic     entrada_i,      
-    output logic    salida_i 
-    );
-```
-#### 2. Parámetros
-- Lista de parámetros
-
-#### 3. Entradas y salidas:
-- `entrada_i`: descripción de la entrada
-- `salida_o`: descripción de la salida
-
-#### 4. Criterios de diseño
-Diagramas, texto explicativo...
-
-#### 5. Testbench
-Descripción y resultados de las pruebas hechas
-
-### 3.4 Módulo de interpretación para display
-```SystemVerilog
-module display7 (
-    input  logic [3:0] s_mux,
-    output logic [6:0] seg
-);
-```
-#### 2. Parámetros
-- Lista de parámetros
-
-#### 3. Entradas y salidas:
-- `s_mux`: es la palabra que sale del módulo selector, indica si lo que se representa es la palabra corregida(en caso de haber correción), la palabra que contiene uno o más errores ingresada a la fpga, o el síndrome calculado en el módulo de corrección. 
-- `seg`: es una palabra de 7 bits, cada uno conectado a las terminales del display de 7 segmentos.
-
-#### 4. Criterios de diseño
-El sistema recibe una palabra de cuatro bits que puede ser: la palabra resultante del módulo de corrección, la palabra con error o el síndrome, el código asigna cada palabra posible a un conjunto alfa de 7 bits, esos 7 bits encenderán un segmento del display cada uno y la palabra de 4 bits ingresada se verá representada con su equivalente en sistema hexadecimal en el display(ver imagen). Cabe decir que no hay una relación matemática entre la palabra de entrada y alfa, porque lo que alfa representa es el conjunto de leds a encender para formar un número hexadecimal en el display.
-![Conexiones del módulo](/Imágenes/case_mux_7seg.png)
-
-#### 5. Testbench
-El testbench ingresa estímulos sobre el módulo e imprime en la terminal los datos de salida.
-![Resultados del testbench](/Imágenes/tb_terminal.png)
-
-
-## 4. Consumo de recursos
+## 5. Consumo de recursos
 
 Se puede llegar a observar en la siguiente imagen los recursos gastados para la ejecucion del proyecto:
 
 ![Resultados del testbench](/Imágenes/Recursos.png)
 
-## 5. Problemas encontrados durante el proyecto
+## 6. Problemas encontrados durante el proyecto
 
 Para este proyecto hubo bastantes problemas que se dieron en el desarrollo de este, un ejemplo de este es errores generados por parte del makefile cuando se cambio los nombres de las carpetas y documentos, para solucionar esto se tuvo que buscar y editar el documento para que las direcciones y nombres coincidieran con los utilizados.
 Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de los casos fueron únicos, pero en su mayoría se buscaba, cancelar, abortar o detener las acciones realizadas para inicializar el proceso de guardado nuevamente. 
 
 ## Bitacora 1 (Yair)
 
-
+![Bitacora](/Imágenes/bitacora1.png)
+![Bitacora](/Imágenes/bitacora2.png)
+![Bitacora](/Imágenes/bitacora3.png)
 ## Bitacora 2 (Sebastián)
 
 ![Bitacora](/Imágenes/Bitacora_1.png)
@@ -170,3 +156,6 @@ Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de 
 ![Bitacora](/Imágenes/Bitacora_3.png)
 ![Bitacora](/Imágenes/Bitacora_4.png)
 ![Bitacora](/Imágenes/Bitacora_5.png)
+
+## Parte 2
+
