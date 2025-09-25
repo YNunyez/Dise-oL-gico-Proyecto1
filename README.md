@@ -6,6 +6,8 @@ Este módulo recibe los 4 bits de información original (dato_entrada) y los ubi
 
 Luego calcula los bits de paridad (palabra[1], palabra[2], palabra[4]) mediante XOR de los datos correspondientes. Finalmente, se añade un bit de paridad global (palabra[0]) que cubre todos los demás bits. De esta forma, a partir de 4 bits de entrada se genera una palabra de 8 bits lista para transmisión, con redundancia suficiente para detección y corrección.
 
+![Conexiones del módulo](/Imágenes/bloques_code.png)
+
 
 •	Decodificador
 Este modulo recibe la palabra transmitida (dato_error), que puede estar alterada por fallos. Primero la copia en la señal recibido, y luego recalcula los bits de control (s1, s2, s3, st). s1, s2, s3 corresponden a los síndromes de paridad que indican la posible posición de error, st corresponde al bit de paridad global. Con esta información, estos clasifican el error en:
@@ -14,42 +16,70 @@ Error simple si hay inconsistencias en los síndromes y la paridad global es 1.
 
 Error doble si hay inconsistencias en los síndromes pero la paridad global es 0.
 
+![Conexiones del módulo](/Imágenes/bloques_deco.png)
+
 
 •	Corrector de errores
 En este módulo se utilizan los valores de los síndromes (s1, s2, s3) para localizar la posición del bit erróneo en caso de error simple. Dependiendo de la combinación, se invierte el bit correspondiente de palabra_corregida.
 Si se detecta un error doble, no es posible corregirlo, pero se activa la señal led_doblerror para indicar la falla.
+
 Finalmente, se extraen los 4 bits originales o corregidos (corregido).
+
+![Conexiones del módulo](/Imágenes/bloques_error.png)
+
+Para la simplificación de corrección de errores se debe de definir las entradas primero.
+
+E (Error simple): Este se refiere a la salida generada en el subsistema de decodificador.
+
+S1, S2, S3 y ST: Son bits generados también en el módulo de decodificador, tienen la función de ubicar el error.
+
+Las salidas corresponden a:
+
+A, B, C y D: Cada una de estas corresponden a un bit de información.
+
+$A=E*S1*S2*(S3)'$
+
+$B=E*S1*(S2)'*S3$
+
+C=E*(S1)'*S2*S3
+
+D=E*S1*S2*S3
+
+Note que para las ecuaciones el valor de E corresponde a:
+
+E=(S1+S2+S3)*ST
+
+Así:
+
+A=(S1+S2+S3)*ST*S1*S2*(S3)'
+
+B=(S1+S2+S3)*ST*S1*(S2)'*S3
+
+C=(S1+S2+S3)*ST*(S1)'*S2*S3
+
+D=(S1+S2+S3)*ST*S1*S2*S3
+
+Tomando de ejemplo a “A” se puede desarrollar de la siguiente forma:
+
+A=S1*ST*S1*S2*(S3)'+S2*ST*S1*S2*(S3)'+S3*ST*S1*S2*(S3)'
+
+A=ST*S1*S2*(S3)'+ST*S1*S2*(S3)'+ST*S1*S2*(S3)'
+
+A=ST*S1*S2*(S3)'
+
+Así se llega a las demás simplificaciones: 
+
+B=ST*S1*(S2)'*S3
+
+C=ST*(S1)'*S2*S3
+
+D=ST*S1*S2*S3
 
 •	Módulo
 ## 2. Referencias
 [0] David Harris y Sarah Harris. *Digital Design and Computer Architecture. RISC-V Edition.* Morgan Kaufmann, 2022. ISBN: 978-0-12-820064-3
 
 ## 3. Simplificación de ecuaciones booleanas corrección de error
-Para la simplificación de corrección de errores se debe de definir las entradas primero.
-E (Error simple): Este se refiere a la salida generada en el subsistema de decodificador.
-S1, S2, S3 y ST: Son bits generados también en el módulo de decodificador, tienen la función de ubicar el error.
-Las salidas corresponden a:
-A, B, C y D: Cada una de estas corresponden a un bit de información.
-$A=E*S1*S2*(S3)'$
-$B=E*S1*(S2)'*S3$
-C=E*(S1)'*S2*S3
-D=E*S1*S2*S3
-Note que para las ecuaciones el valor de E corresponde a:
-E=(S1+S2+S3)*ST
-Así:
-A=(S1+S2+S3)*ST*S1*S2*(S3)'
-B=(S1+S2+S3)*ST*S1*(S2)'*S3
-C=(S1+S2+S3)*ST*(S1)'*S2*S3
-D=(S1+S2+S3)*ST*S1*S2*S3
-Tomando de ejemplo a “A” se puede desarrollar de la siguiente forma:
-
-A=S1*ST*S1*S2*(S3)'+S2*ST*S1*S2*(S3)'+S3*ST*S1*S2*(S3)'
-A=ST*S1*S2*(S3)'+ST*S1*S2*(S3)'+ST*S1*S2*(S3)'
-A=ST*S1*S2*(S3)'
-Así se llega a las demás simplificaciones: 
-B=ST*S1*(S2)'*S3
-C=ST*(S1)'*S2*S3
-D=ST*S1*S2*S3
 
 ## 5.  Ejemplo y análisis de una simulación funcional del sistema completo
 Para este caso se tiene:
