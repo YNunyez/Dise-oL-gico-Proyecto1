@@ -8,7 +8,7 @@ Luego calcula los bits de paridad (palabra[1], palabra[2], palabra[4]) mediante 
 
 ![Conexiones del módulo](/Imágenes/bloques_code.png)
 
-![Conexiones del módulo](/Imágenes/test_code.png)
+![Conexiones del módulo](/Imágenes/Test_code.png)
 
 
 •	Decodificador
@@ -20,7 +20,7 @@ Error doble si hay inconsistencias en los síndromes pero la paridad global es 0
 
 ![Conexiones del módulo](/Imágenes/bloques_deco.png)
 
-![Conexiones del módulo](/Imágenes/test_deco.png)
+![Conexiones del módulo](/Imágenes/Test_deco.png)
 
 
 
@@ -32,7 +32,7 @@ Finalmente, se extraen los 4 bits originales o corregidos (corregido).
 
 ![Conexiones del módulo](/Imágenes/bloques_error.png)
 
-![Conexiones del módulo](/Imágenes/test_error.png)
+![Conexiones del módulo](/Imágenes/Test_error.png)
 
 Para la simplificación de corrección de errores se debe de definir las entradas primero.
 
