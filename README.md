@@ -146,9 +146,9 @@ Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de 
 
 ## Bitacora 1 (Yair)
 
-![Bitacora](/Imágenes/bitacora1.png)
-![Bitacora](/Imágenes/bitacora2.png)
-![Bitacora](/Imágenes/bitacora3.png)
+![Bitacora](/Imágenes/bitacora1.jpg)
+![Bitacora](/Imágenes/bitacora2.jpg)
+![Bitacora](/Imágenes/bitacora3.jpg)
 ## Bitacora 2 (Sebastián)
 
 ![Bitacora](/Imágenes/Bitacora_1.png)
@@ -158,4 +158,12 @@ Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de 
 ![Bitacora](/Imágenes/Bitacora_5.png)
 
 ## Parte 2
-
+![Captura](/Imágenes/DS0001.png)
+![Captura](/Imágenes/DS0002.png)
+![Captura](/Imágenes/DS0003.png)
+![Captura](/Imágenes/DS0004.png)
+![Captura](/Imágenes/DS0005.png)
+![Captura](/Imágenes/DS0006.png)
+![Captura](/Imágenes/DS0007.png)
+![Captura](/Imágenes/DS0008.png)
+![Captura](/Imágenes/DS0009.png)
