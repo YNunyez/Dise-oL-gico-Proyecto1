@@ -173,7 +173,7 @@ $$
 t_{PD}=t_{PLH}+t_{PHL}
 $$
 
-el período total $$T$$ de la oscilación es la suma de todos esos retardos:
+El período total $$T$$ de la oscilación es la suma de todos esos retardos:
 
 $$
 T=2Nt_{PD}
@@ -183,6 +183,7 @@ $$
 t_{PD}=T/{2N}
 $$
 
+N es el número de inversores.
 Según la figura 8: 
 
 $$
