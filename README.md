@@ -168,9 +168,11 @@ Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de 
 
 ## Parte 2
 El retardo de propagación ($$t_PD$$) se entiende como el intervalo de tiempo que pasa desde que la señal de entrada de una compuerta cruza el punto medio de su variación de voltaje (es decir, el 50 % de su amplitud) hasta que la señal de salida alcanza también ese 50 % durante su propia transición.
+
 $$
 t_{PD}=t_{PLH}+t_{PHL}
 $$
+
 el período total $$T$$ de la oscilación es la suma de todos esos retardos:
 
 $$
@@ -192,7 +194,7 @@ N=5
 $$
 
 $$
-t_{PD}=124,4ns/{2\cdot5}
+t_{PD}=124,4ns/(2\cdot5)
 $$
 
 $$
