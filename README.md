@@ -174,13 +174,16 @@ el período total $$T$$ de la oscilación es la suma de todos esos retardos:
 $$T=2Nt_PD$$
 \endline
 Según la figura 8: 
-\\
-$$T=124,4ns$$
-\\
-$$t_PLH=22,04ns$$
-\\
-$$t_PHL=19,24ns$$
-\\
+
+$$
+T=124,4ns
+$$
+$$
+t_PLH=22,04ns
+$$
+$$
+t_PHL=19,24ns$$
+$$
 entonces:
 \\
 $$T=2Nt_PD=2N((t_PLH+t_PHL)/2)$$
