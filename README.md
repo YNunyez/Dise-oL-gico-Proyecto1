@@ -8,7 +8,7 @@ Luego calcula los bits de paridad (palabra[1], palabra[2], palabra[4]) mediante 
 
 ![Conexiones del módulo](/Imágenes/bloques_code.png)
 
-![Conexiones del módulo](/Imágenes/Test_code.png)
+![Resultados del tb](/Imágenes/Test_code.png)
 
 
 •	Decodificador
@@ -20,7 +20,7 @@ Error doble si hay inconsistencias en los síndromes pero la paridad global es 0
 
 ![Conexiones del módulo](/Imágenes/bloques_deco.png)
 
-![Conexiones del módulo](/Imágenes/Test_deco.png)
+![Resultados del tb](/Imágenes/Test_deco.png)
 
 
 
@@ -32,7 +32,7 @@ Finalmente, se extraen los 4 bits originales o corregidos (corregido).
 
 ![Conexiones del módulo](/Imágenes/bloques_error.png)
 
-![Conexiones del módulo](/Imágenes/Test_error.png)
+![Resultados del tb](/Imágenes/Test_error.png)
 
 Para la simplificación de corrección de errores se debe de definir las entradas primero.
 
@@ -160,8 +160,13 @@ Se puede llegar a observar en la siguiente imagen los recursos gastados para la 
 Para este proyecto hubo bastantes problemas que se dieron en el desarrollo de este, un ejemplo de este es errores generados por parte del makefile cuando se cambio los nombres de las carpetas y documentos, para solucionar esto se tuvo que buscar y editar el documento para que las direcciones y nombres coincidieran con los utilizados.
 Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de los casos fueron únicos, pero en su mayoría se buscaba, cancelar, abortar o detener las acciones realizadas para inicializar el proceso de guardado nuevamente. 
 
-## Apendices:
-### Apendice 1:
-texto, imágen, etc
+## Bitacora 1 (Yair)
 
-### Bitacoras
+
+## Bitacora 2 (Sebastián)
+
+![Bitacora](/Imágenes/Bitacora_1.png)
+![Bitacora](/Imágenes/Bitacora_2.png)
+![Bitacora](/Imágenes/Bitacora_3.png)
+![Bitacora](/Imágenes/Bitacora_4.png)
+![Bitacora](/Imágenes/Bitacora_5.png)
