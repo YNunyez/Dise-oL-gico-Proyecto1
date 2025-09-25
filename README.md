@@ -102,9 +102,6 @@ De lo cual podemos extraer lo siguiente:
 	Tenemos un 1 en la salida de error simple (ErrS) y un 0 en la salida de error doble (ErrD), lo cual refleja lo visto en este caso.
 	Se pudo corregir el bit erróneo y llegar a la palabra original
 
-## 7. Análisis de principales problemas hallados durante el trabajo y de las soluciones aplicadas.
-Para este proyecto hubo bastantes problemas que se dieron en el desarrollo de este, un ejemplo de este es errores generados por parte del makefile cuando se cambio los nombres de las carpetas y documentos, para solucionar esto se tuvo que buscar y editar el documento para que las direcciones y nombres coincidieran con los utilizados.
-Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de los casos fueron únicos, pero en su mayoría se buscaba, cancelar, abortar o detener las acciones realizadas para inicializar el proceso de guardado nuevamente. 
 
 ### 3.0 Descripción general del sistema
 
@@ -154,7 +151,14 @@ El testbench ingresa estímulos sobre el módulo e imprime en la terminal los da
 
 ## 4. Consumo de recursos
 
+Se puede llegar a observar en la siguiente imagen los recursos gastados para la ejecucion del proyecto:
+
+![Resultados del testbench](/Imágenes/Recursos.png)
+
 ## 5. Problemas encontrados durante el proyecto
+
+Para este proyecto hubo bastantes problemas que se dieron en el desarrollo de este, un ejemplo de este es errores generados por parte del makefile cuando se cambio los nombres de las carpetas y documentos, para solucionar esto se tuvo que buscar y editar el documento para que las direcciones y nombres coincidieran con los utilizados.
+Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de los casos fueron únicos, pero en su mayoría se buscaba, cancelar, abortar o detener las acciones realizadas para inicializar el proceso de guardado nuevamente. 
 
 ## Apendices:
 ### Apendice 1:
