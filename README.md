@@ -165,8 +165,8 @@ Otro ejemplo de esto es en el actualizar los datos en el github, la mayoría de 
 
 ## Bitacora 2 (Sebastián)
 
-![Bitacora](/Imágenes/Bitacora_1.png)
-![Bitacora](/Imágenes/Bitacora_2.png)
-![Bitacora](/Imágenes/Bitacora_3.png)
-![Bitacora](/Imágenes/Bitacora_4.png)
-![Bitacora](/Imágenes/Bitacora_5.png)
+![Bitacora](/Imágenes/Bitacora_1.jpg)
+![Bitacora](/Imágenes/Bitacora_2.jpg)
+![Bitacora](/Imágenes/Bitacora_3.jpg)
+![Bitacora](/Imágenes/Bitacora_4.jpg)
+![Bitacora](/Imágenes/Bitacora_5.jpg)
