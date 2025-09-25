@@ -94,10 +94,10 @@ module display7 (
 );
 ```
 ![Conexiones del módulo](/Imágenes/case_mux_7seg.png)
-La funcion que implementa el mux para asociar cada palabra de 4 bits a una de 7, $$D_k$$ representa la palabra de 7 bits que hace que se genere al numero k en el display, k es el valor decimal de la palabra de entrada
-El testbench ingresa estímulos sobre el módulo e imprime en la terminal los datos de salida.
+La funcion que implementa el mux para asociar cada palabra de 4 bits a una de 7, $$D_k$$ representa la palabra de 7 bits que hace que se genere al numero k en el display, k es el valor decimal de la palabra de entrada. $$m_k$$ es el minitérmino binario que selecciona k.
 ![Conexiones del módulo](/Imágenes/7seg_funcion.png)
 
+El testbench ingresa estímulos sobre el módulo e imprime en la terminal los datos de salida.
 ![Resultados del testbench](/Imágenes/tb_terminal.png)
 
 •	Módulo mux
